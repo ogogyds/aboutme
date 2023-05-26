@@ -5,9 +5,10 @@
         X-XSS-Protection = "1"
         Cache-Control = "max-age=0"
         X-Content-Type-Options = "nosniff"
-        Keep-Alive = "100"
-        Connection = "keep-alive"
         Referrer-Policy = "no-referrer"
+        Cross-Origin-Embedder-Policy = "require-corp"
+        Cross-Origin-Opener-Policy = "same-origin"
+        Cross-Origin-Resource-Policy = "same-origin"
         
         Strict-Transport-Security = '''
             max-age=31557600;
@@ -17,4 +18,12 @@
 
         Permissions-Policy = '''
             interest-cohort=(none)
+        '''
+
+        Content-Security-Policy = '''
+            script-src 'none';
+            script-src-attr 'none';
+            script-src-elem 'none';
+            
+            require-trusted-types-for 'script';
         '''
